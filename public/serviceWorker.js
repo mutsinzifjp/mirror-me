@@ -1,12 +1,12 @@
 const CACHE_NAME = 'mirror-me-v1.0.0';
 const urlsToCache = [
-  '/johari-window-game/',
-  '/johari-window-game/static/js/bundle.js',
-  '/johari-window-game/static/css/main.css',
-  '/johari-window-game/static/media/logo192.png',
-  '/johari-window-game/static/media/logo512.png',
-  '/johari-window-game/favicon.ico',
-  '/johari-window-game/manifest.json'
+  '/mirror-me/',
+  '/mirror-me/static/js/bundle.js',
+  '/mirror-me/static/css/main.css',
+  '/mirror-me/static/media/logo192.png',
+  '/mirror-me/static/media/logo512.png',
+  '/mirror-me/favicon.ico',
+  '/mirror-me/manifest.json'
 ];
 
 // Install event - cache resources
@@ -50,7 +50,7 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
       fetch(event.request)
         .catch(() => {
-          return caches.match('/johari-window-game/');
+          return caches.match('/mirror-me/');
         })
     );
     return;
@@ -86,7 +86,7 @@ self.addEventListener('fetch', (event) => {
           .catch(() => {
             // Return offline page for navigation requests
             if (event.request.destination === 'document') {
-              return caches.match('/johari-window-game/');
+              return caches.match('/mirror-me/');
             }
           });
       })
@@ -111,8 +111,8 @@ self.addEventListener('push', (event) => {
   
   const options = {
     body: event.data ? event.data.text() : 'New reflection feedback available!',
-    icon: '/johari-window-game/logo192.png',
-    badge: '/johari-window-game/favicon.ico',
+    icon: '/mirror-me/logo192.png',
+    badge: '/mirror-me/favicon.ico',
     vibrate: [100, 50, 100],
     data: {
       dateOfArrival: Date.now(),
@@ -122,12 +122,12 @@ self.addEventListener('push', (event) => {
       {
         action: 'explore',
         title: 'View Feedback',
-        icon: '/johari-window-game/logo192.png'
+        icon: '/mirror-me/logo192.png'
       },
       {
         action: 'close',
         title: 'Close',
-        icon: '/johari-window-game/favicon.ico'
+        icon: '/mirror-me/favicon.ico'
       }
     ]
   };
@@ -145,7 +145,7 @@ self.addEventListener('notificationclick', (event) => {
 
   if (event.action === 'explore') {
     event.waitUntil(
-      clients.openWindow('/johari-window-game/')
+      clients.openWindow('/mirror-me/')
     );
   }
 });

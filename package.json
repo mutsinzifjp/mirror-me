@@ -2,7 +2,7 @@
   "name": "mirror-me",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mutsinzifjp.github.io/johari-window-game",
+  "homepage": "https://mutsinzifjp.github.io/mirror-me",
   "description": "A self-reflection tool called Mirror Me",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
