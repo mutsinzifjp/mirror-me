@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/mirror-me/static/css/main.16c7251f.css",
+    "main.js": "/mirror-me/static/js/main.4d2db540.js",
+    "index.html": "/mirror-me/index.html",
+    "main.16c7251f.css.map": "/mirror-me/static/css/main.16c7251f.css.map",
+    "main.4d2db540.js.map": "/mirror-me/static/js/main.4d2db540.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.16c7251f.css",
+    "static/js/main.4d2db540.js"
+  ]
+}
