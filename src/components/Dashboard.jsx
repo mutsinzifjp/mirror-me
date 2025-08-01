@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { IdentityConstellation, PhilosophicalCompass, ReflectionWaves } from './PhilosophicalVisuals';
 import { AdvancedPhilosophicalEngine } from '../services/AdvancedIntegrationEngine';
 
@@ -10,19 +10,13 @@ const Dashboard = ({ userProfile, sessionId, selfResponses, feedbackResponses, d
   const [downloadFormat, setDownloadFormat] = useState('pdf');
   const [notifications, setNotifications] = useState([]);
 
-  useEffect(() => {
-    if (dataService && sessionId) {
-      loadUserData();
-    }
-  }, [sessionId, dataService]);
-
   // Update local state when props change
   useEffect(() => {
     setUserResponses(selfResponses || []);
     setFeedbackData(feedbackResponses || []);
   }, [selfResponses, feedbackResponses]);
 
-  const loadUserData = () => {
+  const loadUserData = useCallback(() => {
     try {
       // Load from dataService
       const savedResponses = dataService.getUserResponses(sessionId);
@@ -41,18 +35,11 @@ const Dashboard = ({ userProfile, sessionId, selfResponses, feedbackResponses, d
       }
       setNotifications(savedNotifications);
       
-      // Generate fresh analysis if we don't have one
-      if (!savedAnalysis) {
-        generateComprehensiveAnalysis();
-      }
-      
       console.log('✅ Dashboard data loaded successfully');
     } catch (error) {
       console.error('❌ Error loading dashboard data:', error);
-      // Still generate analysis with available data
-      generateComprehensiveAnalysis();
     }
-  };
+  }, [dataService, sessionId]);
 
   const generateComprehensiveAnalysis = () => {
     console.log('🧠 Generating advanced psychological analysis...');
@@ -241,6 +228,14 @@ const Dashboard = ({ userProfile, sessionId, selfResponses, feedbackResponses, d
       generateBasicAnalysis();
     }
   };
+
+  // Generate analysis when data is available and no analysis exists
+  useEffect(() => {
+    if ((userResponses.length > 0 || feedbackData.length > 0) && !analysisResults) {
+      generateComprehensiveAnalysis();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userResponses, feedbackData, analysisResults]);
 
   const generateBasicAnalysis = () => {
     // Fallback basic analysis if advanced engine fails
@@ -899,6 +894,13 @@ ${data.feedbackReceived.map((f, i) => `${i+1}. ${f.question}\n   ${f.response}\n
     const shareText = `I've completed a philosophical self-discovery journey combining multiple psychological frameworks. Check out this approach to deep self-awareness: ${window.location.origin}`;
     navigator.share?.({ text: shareText }) || navigator.clipboard.writeText(shareText);
   };
+
+  // Check authentication status on app load
+  useEffect(() => {
+    if (dataService && sessionId) {
+      loadUserData();
+    }
+  }, [sessionId, dataService, loadUserData]);
 
   return (
     <div className="dashboard">
