@@ -5,20 +5,6 @@ import { JohariGrid } from './PhilosophicalVisuals';
 const JohariWindow = ({ selfResponses, feedbackResponses, onViewInsights }) => {
   // Analyze responses to create meaningful insights instead of simple trait matching
   const analyzeResponses = () => {
-    // Extract themes from self-responses
-    const selfThemes = selfResponses.map(response => ({
-      question: response.question,
-      response: response.response,
-      category: response.category
-    }));
-
-    // Extract themes from feedback responses
-    const feedbackThemes = feedbackResponses.map(response => ({
-      question: response.question,
-      response: response.response,
-      category: response.category
-    }));
-
     // Create philosophical insights rather than simple matches
     return {
       openSelf: "Authentic qualities recognized by both you and others",

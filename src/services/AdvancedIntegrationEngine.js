@@ -10,8 +10,6 @@
  * - Personalized language reflection and tone mapping
  */
 
-import { theoreticalFrameworks } from '../data/traits';
-
 export class AdvancedPhilosophicalEngine {
   constructor(userResponses, feedbackResponses, historicalData = null) {
     this.userResponses = userResponses || [];
@@ -214,7 +212,7 @@ export class AdvancedPhilosophicalEngine {
   generateAdvancedBuberInsight() {
     // Analyze relational capacity through multiple dimensions
     const relationshipResponses = this.filterRelationalResponses();
-    const relationalThemes = this.extractAdvancedThemes(relationshipResponses);
+    // const relationalThemes = this.extractAdvancedThemes(relationshipResponses);
     
     // Advanced relational metrics
     const iThouCapacity = this.assessIThouCapacity(relationshipResponses);
@@ -286,9 +284,9 @@ export class AdvancedPhilosophicalEngine {
     const authenticDesires = this.extractAuthenticDesires();
     const inheritedPatterns = this.identifyInheritedPatterns();
 
-    const personalizedInsights = this.generatePersonalizedLacanInsights(
-      unconsciousPatterns, identityCoherence, authenticDesires
-    );
+    // const personalizedInsights = this.generatePersonalizedLacanInsights(
+    //   unconsciousPatterns, identityCoherence, authenticDesires
+    // );
 
     return {
       unconsciousProfile: {
@@ -338,9 +336,9 @@ export class AdvancedPhilosophicalEngine {
     const leadershipStyle = this.assessLeadershipStyle(behavioralData);
     const teamDynamics = this.assessTeamDynamics(behavioralData);
 
-    const personalizedInsights = this.generatePersonalizedDISCInsights(
-      naturalStyle, adaptiveStyle, communicationEffectiveness
-    );
+    // const personalizedInsights = this.generatePersonalizedDISCInsights(
+    //   naturalStyle, adaptiveStyle, communicationEffectiveness
+    // );
 
     return {
       behavioralProfile: {
@@ -369,25 +367,25 @@ export class AdvancedPhilosophicalEngine {
    * ADVANCED EXISTENTIAL ANALYSIS - Authentic Being Assessment
    */
   generateAdvancedExistentialInsight() {
-    const existentialThemes = this.extractExistentialThemes();
+    // const existentialThemes = this.extractExistentialThemes();
     const authenticityMetrics = this.assessAuthenticityMetrics();
-    const responsibilityPatterns = this.analyzeResponsibilityPatterns();
+    // const responsibilityPatterns = this.analyzeResponsibilityPatterns();
     const meaningMaking = this.analyzeMeaningMakingPatterns();
 
     // Core existential dimensions
     const freedomOrientation = this.assessFreedomOrientation();
     const anxietyRelationship = this.assessAnxietyRelationship();
     const deathAwareness = this.assessDeathAwareness();
-    const isolationComfort = this.assessIsolationComfort();
+    // const isolationComfort = this.assessIsolationComfort();
 
     // Authenticity analysis
     const valuesAlignment = this.assessValuesAlignment();
     const choiceOwnership = this.assessChoiceOwnership();
-    const meaningfulAction = this.assessMeaningfulAction();
+    // const meaningfulAction = this.assessMeaningfulAction();
 
-    const personalizedInsights = this.generatePersonalizedExistentialInsights(
-      authenticityMetrics, freedomOrientation, meaningMaking
-    );
+    // const personalizedInsights = this.generatePersonalizedExistentialInsights(
+    //   authenticityMetrics, freedomOrientation, meaningMaking
+    // );
 
     return {
       existentialProfile: {

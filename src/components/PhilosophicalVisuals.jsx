@@ -218,7 +218,7 @@ export const UnconsciosPattern = ({ size = 70, className = "" }) => (
   </svg>
 );
 
-export default {
+const PhilosophicalVisuals = {
   MirrorSymbol,
   JohariGrid,
   IdentityConstellation,
@@ -226,3 +226,5 @@ export default {
   PhilosophicalCompass,
   UnconsciosPattern
 };
+
+export default PhilosophicalVisuals;

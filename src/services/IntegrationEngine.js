@@ -1,5 +1,3 @@
-import { theoreticalFrameworks } from '../data/traits';
-
 /**
  * COMPREHENSIVE PHILOSOPHICAL INTEGRATION ENGINE
  * 
@@ -114,7 +112,7 @@ export class PhilosophicalIntegrationEngine {
    * Examines capacity for authentic relationship
    */
   analyzeBuberFramework() {
-    const relationalIndicators = this.extractRelationalPatterns();
+    // const relationalIndicators = this.extractRelationalPatterns();
     
     return {
       relationshipCapacity: {
@@ -144,7 +142,7 @@ export class PhilosophicalIntegrationEngine {
    * Explores unconscious identity formation and social mirrors
    */
   analyzeLacanFramework() {
-    const identityPatterns = this.identifyIdentityPatterns();
+    // const identityPatterns = this.identifyIdentityPatterns();
     
     return {
       psychicStructure: {
@@ -173,7 +171,7 @@ export class PhilosophicalIntegrationEngine {
    * Maps natural behavioral tendencies and adaptations
    */
   analyzeDISCProfile() {
-    const behavioralPatterns = this.identifyBehavioralPatterns();
+    // const behavioralPatterns = this.identifyBehavioralPatterns();
     
     return {
       naturalStyle: {
@@ -203,7 +201,7 @@ export class PhilosophicalIntegrationEngine {
    * Examines authentic being, choice, and meaning-making
    */
   analyzeExistentialFramework() {
-    const existentialThemes = this.identifyExistentialThemes();
+    // const existentialThemes = this.identifyExistentialThemes();
     
     return {
       existentialPositions: {
